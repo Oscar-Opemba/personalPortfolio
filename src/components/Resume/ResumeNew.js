@@ -1,15 +1,55 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
 
+const lines = [
+  "> Oscar Opemba",
+  "Cybersecurity Enthusiast | Bug Bounty Hunter | Penetration Tester",
+  "Email: ozzie.999@hotmail.com | Phone: +254 712543920",
+  "Website: oscaropemba.tech | Location: Nairobi, Kenya",
+  "",
+  "-- About Me --",
+  "Cybersecurity student with hands-on experience in bug bounty hunting and penetration testing.",
+  "Skilled in Kali Linux, API security testing, and vulnerability analysis.",
+  "Passionate about securing banking and fintech platforms.",
+  "",
+  "-- Skills --",
+  "Programming / Scripting: Python, Bash, JavaScript",
+  "Tools / Platforms: Kali Linux, Burp Suite, Metasploit",
+  "Other: Bug Bounty, OSINT, Web Security, API Testing",
+  "",
+  "-- Education --",
+  "B.Sc. Information Technology – Karatina University",
+  "",
+  "-- Experience / Projects --",
+  "Bug Bounty Hunter | Personal Projects – Found vulnerabilities, wrote reports, patched issues.",
+  "API Security Testing | trewatech.spot – Identified and patched API vulnerabilities in a fintech platform.",
+  "Trading Bots / Automation – Built automated trading bots for Binary.com / Deriv using EX5/XML.",
+  "",
+  "-- Alias --",
+  "CyberNomad",
+];
+
 function ResumeNew() {
+  const [displayedLines, setDisplayedLines] = useState([]);
+
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      setDisplayedLines((prev) => [...prev, lines[index]]);
+      index++;
+      if (index === lines.length) clearInterval(interval);
+    }, 150); // typing speed (ms)
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Container fluid className="resume-section">
       <Particle />
 
       {/* Download PDF Button */}
-      <Row style={{ justifyContent: "center", position: "relative", marginBottom: "20px" }}>
+      <Row style={{ justifyContent: "center", marginBottom: "20px" }}>
         <a
           href="/resume/Oscar_Opemba_Resume.pdf"
           target="_blank"
@@ -23,7 +63,8 @@ function ResumeNew() {
             borderRadius: "5px",
             textDecoration: "none",
             fontWeight: "bold",
-            marginBottom: "20px"
+            marginBottom: "20px",
+            boxShadow: "0 0 10px #00ff00",
           }}
         >
           <AiOutlineDownload style={{ marginRight: "8px" }} />
@@ -31,7 +72,7 @@ function ResumeNew() {
         </a>
       </Row>
 
-      {/* Hacker-Style Interactive Resume */}
+      {/* Typing Hacker Resume */}
       <Row>
         <div
           style={{
@@ -43,41 +84,20 @@ function ResumeNew() {
             lineHeight: "1.6",
             maxWidth: "900px",
             margin: "20px auto",
-            boxShadow: "0 0 15px #00ff00"
+            boxShadow: "0 0 20px #00ff00",
+            minHeight: "600px",
           }}
         >
-          <div>&gt; <strong>Oscar Opemba</strong></div>
-          <div>Cybersecurity Enthusiast | Bug Bounty Hunter | Penetration Tester</div>
-          <div>Email: ozzie.999@hotmail.com | Phone: +254 712543920</div>
-          <div>
-            Website: <a href="https://oscaropemba.tech" style={{ color: "#00ffff" }}>oscaropemba.tech</a> | Location: Nairobi, Kenya
-          </div>
-
-          <br />
-          <div>-- About Me --</div>
-          <div>
-            Cybersecurity student with hands-on experience in bug bounty hunting and penetration testing. Skilled in Kali Linux, API security testing, and vulnerability analysis. Passionate about securing banking and fintech platforms.
-          </div>
-
-          <br />
-          <div>-- Skills --</div>
-          <div>Programming / Scripting: Python, Bash, JavaScript</div>
-          <div>Tools / Platforms: Kali Linux, Burp Suite, Metasploit</div>
-          <div>Other: Bug Bounty, OSINT, Web Security, API Testing</div>
-
-          <br />
-          <div>-- Education --</div>
-          <div>B.Sc. Information Technology – Karatina University</div>
-
-          <br />
-          <div>-- Experience / Projects --</div>
-          <div>Bug Bounty Hunter | Personal Projects – Discovered vulnerabilities on multiple websites, wrote detailed reports, and collaborated on patching issues.</div>
-          <div>API Security Testing | trewatech.spot – Identified and patched API vulnerabilities in a fintech platform.</div>
-          <div>Trading Bots / Automation – Built automated trading bots for Binary.com / Deriv using EX5/XML.</div>
-
-          <br />
-          <div>-- Alias --</div>
-          <div>CyberNomad</div>
+          {displayedLines.map((line, idx) => (
+            <div
+              key={idx}
+              style={{
+                textShadow: "0 0 5px #00ff00, 0 0 10px #00ff00",
+              }}
+            >
+              {line}
+            </div>
+          ))}
         </div>
       </Row>
     </Container>
