@@ -40,7 +40,7 @@ function ResumeNew() {
       setDisplayedLines((prev) => [...prev, lines[index]]);
       index++;
       if (index === lines.length) clearInterval(interval);
-    }, 150); // typing speed (ms)
+    }, 150);
     return () => clearInterval(interval);
   }, []);
 
@@ -51,26 +51,25 @@ function ResumeNew() {
       {/* Download PDF Button */}
       <Row style={{ justifyContent: "center", marginBottom: "20px" }}>
         <a
-  href="/resume/Oscar_Opemba_Resume.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  style={{
-    display: "inline-block",
-    padding: "10px 20px",
-    backgroundColor: "#0d0d0d",
-    color: "#00ff00",
-    border: "2px solid #00ff00",
-    borderRadius: "5px",
-    textDecoration: "none",
-    fontWeight: "bold",
-    marginBottom: "20px",
-    boxShadow: "0 0 10px #00ff00",
-  }}
->
-  <AiOutlineDownload style={{ marginRight: "8px" }} />
-  Download CV
-</a>
-
+          href={process.env.PUBLIC_URL + "/resume/Oscar_Opemba_Resume.pdf"}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-block",
+            padding: "10px 20px",
+            backgroundColor: "#0d0d0d",
+            color: "#00ff00",
+            border: "2px solid #00ff00",
+            borderRadius: "5px",
+            textDecoration: "none",
+            fontWeight: "bold",
+            marginBottom: "20px",
+            boxShadow: "0 0 10px #00ff00",
+          }}
+        >
+          <AiOutlineDownload style={{ marginRight: "8px" }} />
+          Download CV
+        </a>
       </Row>
 
       {/* Typing Hacker Resume */}
@@ -92,9 +91,7 @@ function ResumeNew() {
           {displayedLines.map((line, idx) => (
             <div
               key={idx}
-              style={{
-                textShadow: "0 0 5px #00ff00, 0 0 10px #00ff00",
-              }}
+              style={{ textShadow: "0 0 5px #00ff00, 0 0 10px #00ff00" }}
             >
               {line}
             </div>
