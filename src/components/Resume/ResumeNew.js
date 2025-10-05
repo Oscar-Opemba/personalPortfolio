@@ -59,15 +59,14 @@ function ResumeNew() {
             padding: "10px 20px",
             backgroundColor: "#0d0d0d",
             color: "#00ff00",
-            border: "2px solid #00ff00",
+            border: "1px solid #00ff00",
             borderRadius: "5px",
             textDecoration: "none",
             fontWeight: "bold",
-            marginBottom: "20px",
-            boxShadow: "0 0 10px #00ff00",
+            textAlign: "center",
           }}
         >
-          <AiOutlineDownload style={{ marginRight: "8px" }} />
+          <AiOutlineDownload style={{ marginRight: "5px" }} />
           Download CV
         </a>
       </Row>
@@ -84,17 +83,11 @@ function ResumeNew() {
             lineHeight: "1.6",
             maxWidth: "900px",
             margin: "20px auto",
-            boxShadow: "0 0 20px #00ff00",
             minHeight: "600px",
           }}
         >
           {displayedLines.map((line, idx) => (
-            <div
-              key={idx}
-              style={{ textShadow: "0 0 5px #00ff00, 0 0 10px #00ff00" }}
-            >
-              {line}
-            </div>
+            <div key={idx}>{line}</div>
           ))}
         </div>
       </Row>
