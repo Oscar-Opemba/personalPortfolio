@@ -51,7 +51,7 @@ function ResumeNew() {
       {/* Download PDF Button */}
       <Row style={{ justifyContent: "center", marginBottom: "20px" }}>
         <a
-          href={process.env.PUBLIC_URL + "/resume/Oscar_Opemba_Resume.pdf"}
+          href="/Oscar_Opemba_Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           style={{
@@ -103,4 +103,5 @@ function ResumeNew() {
 }
 
 export default ResumeNew;
+
 
