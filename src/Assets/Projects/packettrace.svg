@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#061624"/>
+  <text x="60" y="120" font-size="46" fill="#00eaff" font-family="Segoe UI, Roboto" font-weight="700">PacketTrace Analyzer</text>
+  <text x="60" y="170" font-size="22" fill="#8be9fd" font-family="monospace">Network Packet Inspection • SOC • Detection</text>
+  <rect x="60" y="230" width="1080" height="360" rx="10" fill="#02121a" opacity="0.6"/>
+  <g fill="#0ff" font-family="monospace" font-size="18">
+    <text x="80" y="280">▶ capture.eth0()</text>
+    <text x="80" y="310">▶ parse.tcp_stream()</text>
+    <text x="80" y="340">▶ detect.anomaly(score&gt;0.9)</text>
+    <text x="80" y="370">▶ export.pcap(report=True)</text>
+  </g>
+</svg>

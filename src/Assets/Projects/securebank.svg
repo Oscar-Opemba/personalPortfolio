@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" rx="6" fill="#08182a"/>
+  <text x="40" y="80" fill="#7be8ff" font-family="Segoe UI, Roboto, Arial" font-size="28" font-weight="700">securebank</text>
+  <text x="40" y="120" fill="#9be7ff" font-family="monospace" font-size="14">Placeholder thumbnail for securebank</text>
+</svg>
